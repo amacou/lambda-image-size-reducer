@@ -1,3 +1,5 @@
+# lambda-image-size-reducer
+
 ### deploy
 ```
 make deploy
