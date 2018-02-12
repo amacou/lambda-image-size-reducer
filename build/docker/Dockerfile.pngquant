@@ -1,0 +1,8 @@
+FROM ubuntu:latest
+
+RUN apt-get update && \
+ apt-get install -y git libpng-dev make gcc && \
+ git clone --recursive https://github.com/kornelski/pngquant.git && \
+ cd pngquant && \
+ ./configure && \
+ make
