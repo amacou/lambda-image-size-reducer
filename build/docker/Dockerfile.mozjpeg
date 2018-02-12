@@ -1,9 +1,9 @@
-FROM ubuntu:latest
+FROM amazonlinux:latest
 
-RUN apt-get update && \
- apt-get install -y autoconf automake libtool nasm make pkg-config wget && \
- wget "https://github.com/mozilla/mozjpeg/releases/download/v3.2/mozjpeg-3.2-release-source.tar.gz" && \
+RUN yum update -y && \
+ yum install -y autoconf automake gcc nasm libtool findutils && \
+ curl -LO https://github.com/mozilla/mozjpeg/releases/download/v3.2/mozjpeg-3.2-release-source.tar.gz && \
  tar -xf mozjpeg-3.2-release-source.tar.gz && \
  cd mozjpeg && \
  ./configure --disable-shared --enable-static && \
-  make && make install
+ make

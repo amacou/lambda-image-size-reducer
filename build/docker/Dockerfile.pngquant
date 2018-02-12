@@ -1,7 +1,7 @@
-FROM ubuntu:latest
+FROM amazonlinux:latest
 
-RUN apt-get update && \
- apt-get install -y git libpng-dev make gcc && \
+RUN yum update -y && \
+ yum install -y git libpng-devel make gcc && \
  git clone --recursive https://github.com/kornelski/pngquant.git && \
  cd pngquant && \
  ./configure && \
